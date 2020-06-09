@@ -12,10 +12,10 @@
       <v-tab-item v-for="item in items" :key="item.key">
         <v-card color="basil" flat>
           <component :is="currentTab"></component>
-          <!-- <v-card-text>{{item.name}}</v-card-text> -->
         </v-card>
       </v-tab-item>
     </v-tabs-items>
+    <img src="@/assets/koi.gif" />
   </v-card>
 </template>
 
@@ -38,23 +38,17 @@ export default {
       items: [
         {
           name: "About",
-          key: 0,
-          text: "yoyoyoyoyoyo"
+          key: 0
         },
         {
           name: "Location",
-          key: 1,
-          text: "lordlorldorldorld",
-          component: Location
+          key: 1
         },
         {
           name: "Menu",
-          key: 2,
-          text: ",eme,e,asdasdsacf",
-          component: Menu
+          key: 2
         }
-      ],
-      texts: ["about", "location", "menu"]
+      ]
     };
   },
   methods: {
@@ -70,6 +64,20 @@ export default {
   background-color: #9c9c9c !important;
 }
 .basil--text {
-  color: #8a009c !important;
+  color: #202020 !important;
 }
+
+.v-card:not(.v-sheet--tile):not(.v-card--shaped) {
+  border-top-left-radius: 1px !important;
+  border-top-right-radius: 1px !important;
+}
+
+.theme--light {
+  background-color: #9c9c9c !important;
+}
+/* 
+.koi {
+  background-image: koi !important;
+} */
 </style>
+
