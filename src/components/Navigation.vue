@@ -1,42 +1,75 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">BASiL</h1>
+      <h1 class="font-weight-bold display-3 basil--text">The Pond</h1>
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
+      <v-tab v-for="item in items" :key="item.key" @click="tabClick(item)">{{ item.name }}</v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
-      <v-tab-item v-for="item in items" :key="item">
+      <v-tab-item v-for="item in items" :key="item.key">
         <v-card color="basil" flat>
-          <v-card-text>{{ text }}</v-card-text>
+          <component :is="currentTab"></component>
+          <!-- <v-card-text>{{item.name}}</v-card-text> -->
         </v-card>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
 </template>
 
+
 <script>
+import About from "./About";
+import Location from "./Location";
+import Menu from "./Menu";
+
 export default {
+  components: {
+    About: About,
+    Location: Location,
+    Menu: Menu
+  },
   data() {
     return {
       tab: null,
-      items: ["Appetizers", "Entrees", "Deserts", "Cocktails"],
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      currentTab: "About",
+      items: [
+        {
+          name: "About",
+          key: 0,
+          text: "yoyoyoyoyoyo"
+        },
+        {
+          name: "Location",
+          key: 1,
+          text: "lordlorldorldorld",
+          component: Location
+        },
+        {
+          name: "Menu",
+          key: 2,
+          text: ",eme,e,asdasdsacf",
+          component: Menu
+        }
+      ],
+      texts: ["about", "location", "menu"]
     };
+  },
+  methods: {
+    tabClick: function(item) {
+      this.currentTab = item.name;
+    }
   }
 };
 </script>
 
 <style>
-/* Helper classes */
 .basil {
-  background-color: #fffbe6 !important;
+  background-color: #9c9c9c !important;
 }
 .basil--text {
-  color: #356859 !important;
+  color: #8a009c !important;
 }
 </style>

@@ -21,3 +21,8 @@ export default {
   })
 };
 </script>
+<style>
+v-content {
+  color: blue !important;
+}
+</style>
