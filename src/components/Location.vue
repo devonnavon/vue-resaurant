@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h1>Located at this vibey spot</h1>
-    <p>We've gooottt vibes... and even more so koi</p>
+    <h2>Located somewhere...</h2>
+    <p>
+      We are located in the hills.
+      It is quite nice up in the hills. Lots of greens.
+    </p>
+    <img src="@/assets/whereweat.jpg" alt />
   </div>
 </template>
 <script>

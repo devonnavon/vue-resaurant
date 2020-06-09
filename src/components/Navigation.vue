@@ -15,7 +15,6 @@
         </v-card>
       </v-tab-item>
     </v-tabs-items>
-    <img src="@/assets/koi.gif" />
   </v-card>
 </template>
 
